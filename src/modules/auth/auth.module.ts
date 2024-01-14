@@ -7,7 +7,6 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { ConfigModule } from '@nestjs/config';
 import { AuthMiddleware } from 'src/middlewares/auth/auth.middleware';
-import path from 'path';
 
 
 @Module({

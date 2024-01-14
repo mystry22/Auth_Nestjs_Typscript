@@ -2,11 +2,13 @@ import { Module } from '@nestjs/common';
 import { SignupModule } from './modules/signup/signup.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     SignupModule,
     AuthModule,
-    MongooseModule.forRoot('mongodb+srv://mystry:mystry22@fancyfinery.k3uod.mongodb.net/authnestjs?retryWrites=true&w=majority'),
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.MONGO_DB_CONNECTION),
   ],
   
 })
